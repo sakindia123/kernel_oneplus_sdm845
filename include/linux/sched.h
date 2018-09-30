@@ -2283,6 +2283,11 @@ struct task_struct {
 	/* Ted, 20180425, non-exist dcache*/
 	struct nedf_node *nn;
 	int hot_count;
+
+#ifdef CONFIG_ANDROID_SIMPLE_LMK
+	bool lmk_sigkill_sent;
+#endif
+
 /* CPU-specific state of this task */
 	struct thread_struct thread;
 /*
